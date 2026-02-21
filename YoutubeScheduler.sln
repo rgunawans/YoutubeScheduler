@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeScheduler", "YoutubeScheduler\YoutubeScheduler.csproj", "{8D917F16-ECF6-4AA2-ACF7-AC9C5A781B95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D917F16-ECF6-4AA2-ACF7-AC9C5A781B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D917F16-ECF6-4AA2-ACF7-AC9C5A781B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D917F16-ECF6-4AA2-ACF7-AC9C5A781B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D917F16-ECF6-4AA2-ACF7-AC9C5A781B95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25CA7D34-2603-4B7C-8CF7-4698290056F8}
+	EndGlobalSection
+EndGlobal
+
