@@ -1,6 +1,8 @@
 
 # YoutubeScheduler Windows Desktop App (.Net core 8)
 
+<img width="1197" height="661" alt="image" src="https://github.com/user-attachments/assets/9bd16dae-d41e-4f69-b27a-74cd2981ccac" />
+
 Fitur utama:
 - Membuat jadwal streaming otomatis untuk rentang tanggal yang dipilih.
   - Misa Minggu: setiap Minggu jam 10:00
