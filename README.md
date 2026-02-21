@@ -1,5 +1,5 @@
 
-# YoutubeScheduler
+# YoutubeScheduler Windows Desktop App (.Net core 8)
 
 Fitur utama:
 - Membuat jadwal streaming otomatis untuk rentang tanggal yang dipilih.
