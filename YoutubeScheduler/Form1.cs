@@ -17,12 +17,14 @@ namespace YoutubeScheduler
 {
     public partial class Form1 : Form
     {
+        private readonly Microsoft.Extensions.Configuration.IConfiguration _configuration;
         private List<YoutubeSchedule> schedules = new List<YoutubeSchedule>();
         private BindingSource bindingSource = new BindingSource();
         private Dictionary<string, string> createdPlaylists = new Dictionary<string, string>(); // PlaylistName -> PlaylistId
 
-        public Form1()
+        public Form1(Microsoft.Extensions.Configuration.IConfiguration configuration)
         {
+            _configuration = configuration;
             InitializeComponent();
             bindingSource.DataSource = schedules;
             dataGridViewSchedules.DataSource = bindingSource;
@@ -123,7 +125,12 @@ namespace YoutubeScheduler
         {
             try
             {
-                using var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read);
+                var secretJson = _configuration["YoutubeClientSecret"];
+                if (string.IsNullOrEmpty(secretJson))
+                {
+                    throw new Exception("YoutubeClientSecret belum diset di User Secrets.");
+                }
+                using var stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(secretJson));
                 var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.FromStream(stream).Secrets,
                     new[] {
@@ -144,7 +151,7 @@ namespace YoutubeScheduler
             {
                 MessageBox.Show($"Error saat autentikasi YouTube: {ex.Message}\n\n" +
                                "Pastikan:\n" +
-                               "1. File client_secret.json ada dan valid\n" +
+                               "1. Secret YoutubeClientSecret sudah diset di User Secrets\n" +
                                "2. Email Anda ditambahkan sebagai test user di Google Cloud Console\n" +
                                "3. YouTube Data API v3 sudah diaktifkan");
                 throw;
