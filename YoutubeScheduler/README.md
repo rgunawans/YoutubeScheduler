@@ -1,5 +1,7 @@
 
-# YoutubeScheduler
+# YoutubeScheduler Windows Desktop App (.Net core 10)
+
+<img width="1197" height="661" alt="image" src="https://github.com/user-attachments/assets/9bd16dae-d41e-4f69-b27a-74cd2981ccac" />
 
 Fitur utama:
 - Membuat jadwal streaming otomatis untuk rentang tanggal yang dipilih.
@@ -29,15 +31,11 @@ Konfigurasi OAuth (ringkas):
 1. Buat project di Google Cloud Console.
 2. Aktifkan YouTube Data API v3.
 3. Buat OAuth Client ID tipe "Desktop app" dan download JSON.
-4. Simpan isi file JSON ke User Secrets dengan perintah berikut (di terminal):
-   ```
-   dotnet user-secrets set YoutubeClientSecret "<PASTE_JSON_HERE>" --project YoutubeScheduler/YoutubeScheduler.csproj
-   ```
-   Ganti `<PASTE_JSON_HERE>` dengan isi file JSON credential Anda (tanpa spasi/enter).
+4. Simpan file JSON sebagai `client_secret.json` di folder aplikasi.
 5. Tambahkan email Anda sebagai test user pada OAuth consent screen jika project masih dalam mode testing.
 
 Catatan penting dan troubleshooting:
-- Pastikan secret `YoutubeClientSecret` sudah diset di User Secrets. Tidak perlu menyimpan file `client_secret.json` di folder aplikasi.
+- Pastikan nama file credential adalah `client_secret.json` (kode membuka file ini). 
 - Jika muncul peringatan "App isn't verified" saat OAuth, pilih Advanced -> Go to ... (unsafe) untuk melanjutkan saat pengujian.
 - Jika mendapat error 403, periksa kembali bahwa email Anda terdaftar sebagai test user dan API sudah diaktifkan. Hapus folder token di `%APPDATA%\\Google.Apis.Auth` jika perlu dan ulangi otorisasi.
 - Jika ada error terkait "resolution" saat binding stream, coba gunakan resolusi lebih rendah (kode mencoba 1080p lalu fallback ke 720p).
