@@ -1,5 +1,5 @@
 
-# YoutubeScheduler Windows Desktop App (.Net core 8)
+# YoutubeScheduler Windows Desktop App (.Net core 10)
 
 <img width="1197" height="661" alt="image" src="https://github.com/user-attachments/assets/9bd16dae-d41e-4f69-b27a-74cd2981ccac" />
 
@@ -48,4 +48,4 @@ Struktur file utama:
 
 Lisensi dan dependensi:
 - Proyek menggunakan Google.Apis.YouTube.v3 dan EPPlus.
-- Target framework: .NET 8.
+- Target framework: .NET 10.
